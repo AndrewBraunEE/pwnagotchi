@@ -181,7 +181,7 @@ EOF
   done </root/.pwnagotchi-crypted
 
   # overwrite passwords
-  python3 -c 'print("A"*4096)' | tee /tmp/.pwnagotchi-secret-* >/dev/null
+  python3.7 -c 'print("A"*4096)' | tee /tmp/.pwnagotchi-secret-* >/dev/null
   # delete
   rm /tmp/.pwnagotchi-secret-*
   sync # flush

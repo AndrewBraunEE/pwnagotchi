@@ -46,7 +46,7 @@ $(PACKER):
 
 SDIST := dist/pwnagotchi-$(PWN_VERSION).tar.gz
 $(SDIST): setup.py pwnagotchi
-	python3 setup.py sdist
+	python3.7 setup.py sdist
 
 # Building the image requires packer, but don't rebuild the image just because packer updated.
 $(PWN_RELEASE).img: | $(PACKER)
@@ -70,7 +70,7 @@ $(PWN_RELEASE).zip: $(PWN_RELEASE).img $(PWN_RELEASE).sha256
 image: $(PWN_RELEASE).zip
 
 clean:
-	- python3 setup.py clean --all
+	- python3.7 setup.py clean --all
 	- rm -rf dist pwnagotchi.egg-info
 	- rm -f $(PACKER)
 	- rm -f $(PWN_RELEASE).*

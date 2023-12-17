@@ -26,11 +26,11 @@ while getopts "ho:n:u:" arg; do
 done
 
 # name of the ethernet gadget interface on the host
-UNIT_HOSTNAME=${UNIT_HOSTNAME:-10.0.0.2}
+UNIT_HOSTNAME=${UNIT_HOSTNAME:-127.0.0.1}
 # output backup tgz file
 OUTPUT=${OUTPUT:-${UNIT_HOSTNAME}-backup-$(date +%s).tgz}
 # username to use for ssh
-UNIT_USERNAME=${UNIT_USERNAME:-pi}
+UNIT_USERNAME=${UNIT_USERNAME:-pwnagotchi}
 # what to backup
 FILES_TO_BACKUP="/root/brain.nn \
   /root/brain.json \
@@ -42,18 +42,26 @@ FILES_TO_BACKUP="/root/brain.nn \
   /root/peers \
   /etc/pwnagotchi/ \
   /etc/ssh/ \
+  /etc/network/interfaces.d \
+  /etc/wpa_supplicant/wpa_supplicant.conf \
+  /var/log/syslog \
+  /var/log/auth.log \
+  /etc/network/interfaces \
   /var/log/pwnagotchi.log \
   /var/log/pwnagotchi*.gz \
-  /home/pi/.ssh \
-  /home/pi/.bashrc \
-  /home/pi/.profile \
+  /home/$UNIT_USERNAME/.ssh \
+  /home/$UNIT_USERNAME/.bashrc \
+  /home/$UNIT_USERNAME/.profile \
+  /home/$UNIT_USERNAME/.bash_profile \
   /root/.api-report.json \
   /root/.auto-update \
   /root/.bt-tether* \
   /root/.net_pos_saved \
   /root/.ohc_uploads \
   /root/.wigle_uploads \
-  /root/.wpa_sec_uploads"
+  /root/.wpa_sec_uploads \
+  /boot/config.txt \
+  /boot/cmdline.txt"
 
 ping -c 1 "${UNIT_HOSTNAME}" > /dev/null 2>&1 || {
   echo "@ unit ${UNIT_HOSTNAME} can't be reached, make sure it's connected and a static IP assigned to the USB interface."
