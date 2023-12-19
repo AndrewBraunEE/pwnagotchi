@@ -47,6 +47,7 @@ FILES_TO_BACKUP="/root/brain.nn \
   /var/log/syslog \
   /var/log/auth.log \
   /etc/network/interfaces \
+  /etc/resolvconf \
   /var/log/pwnagotchi.log \
   /var/log/pwnagotchi*.gz \
   /home/$UNIT_USERNAME/.ssh \
