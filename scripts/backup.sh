@@ -30,7 +30,7 @@ UNIT_HOSTNAME=${UNIT_HOSTNAME:-127.0.0.1}
 # output backup tgz file
 OUTPUT=${OUTPUT:-${UNIT_HOSTNAME}-backup-$(date +%s).tgz}
 # username to use for ssh
-UNIT_USERNAME=${UNIT_USERNAME:-pwnagotchi}
+UNIT_USERNAME=${UNIT_USERNAME:-showboo}
 # what to backup
 FILES_TO_BACKUP="/root/brain.nn \
   /root/brain.json \

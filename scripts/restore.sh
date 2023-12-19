@@ -25,7 +25,7 @@ while getopts "hb:n:u:" arg; do
 	esac
 done
 # name of the ethernet gadget interface on the host
-UNIT_HOSTNAME=${UNIT_HOSTNAME:-10.0.0.2}
+UNIT_HOSTNAME=${UNIT_HOSTNAME:-127.0.0.1}
 # output backup tgz file
 if [ -z $BACKUP ]; then
 	BACKUP=$(ls -rt ${UNIT_HOSTNAME}-backup-*.tgz 2>/dev/null | tail -n1)
@@ -43,7 +43,7 @@ if [ -z $BACKUP ]; then
 	fi
 fi
 # username to use for ssh
-UNIT_USERNAME=${UNIT_USERNAME:-pi}
+UNIT_USERNAME=${UNIT_USERNAME:-showboo}
 
 ping -c 1 "${UNIT_HOSTNAME}" > /dev/null 2>&1 || {
   echo "@ unit ${UNIT_HOSTNAME} can't be reached, make sure it's connected and a static IP assigned to the USB interface."
