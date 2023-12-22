@@ -10,7 +10,7 @@ absl-py==1.2.0
     # via
     #   tensorboard
     #   tensorflow
-astor==0.8.1
+astor
     # via tensorflow
 atari-py==0.2.6
     # via gym
@@ -40,9 +40,9 @@ flask-wtf==1.0.1
     # via -r requirements.in
 fonttools==4.37.4
     # via matplotlib
-gast==0.5.3
+gast
     # via tensorflow
-google-pasta==0.2.0
+google-pasta
     # via tensorflow
 grpcio==1.49.1
     # via
@@ -162,9 +162,9 @@ stable-baselines==2.10.2
     # via -r requirements.in
 tensorboard==1.13.1
     # via tensorflow
-tensorflow==1.13.1
+tensorflow==1.13.2
     # via -r requirements.in
-tensorflow-estimator
+tensorflow-estimator==1.13.0
     # via tensorflow
 termcolor==2.0.1
     # via tensorflow

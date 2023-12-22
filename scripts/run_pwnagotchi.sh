@@ -1,1 +1,1 @@
-ulimit -S -c unlimited && sudo aimon-ng check kill && pwnagtochi --debug
+ulimit -S -c unlimited && sudo airmon-ng check kill && pwnagotchi --debug
