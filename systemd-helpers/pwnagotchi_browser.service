@@ -1,0 +1,13 @@
+[Unit]
+Description=Firefox Web Browser
+After=pwngrid.service default.target xfce4-session.target start_pwnagotchi_automatically.service
+Wants=pwngrid.service default.target xfce4-session.target start_pwnagotchi_automatically.service
+
+[Service]
+ExecStart=firefox http://pwnagotchi:0123456789@127.0.0.1:8080
+Restart=always
+User=showboo
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=default.target

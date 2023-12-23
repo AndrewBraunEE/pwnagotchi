@@ -1,0 +1,11 @@
+# /etc/systemd/system/start_pwnagotchi_automatically.target
+[Unit]
+Description=Run Configuration Script to Start Pwnagotchi at boot
+After=network.target graphical.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c "/home/showboo/Documents/pwnagotchi/scripts/run_pwnagotchi.sh"
+
+[Install]
+WantedBy=default.target
